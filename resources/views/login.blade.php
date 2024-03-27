@@ -16,7 +16,7 @@
                 <x-form.label for="password"> Password </x-form.label>
                 <x-form.input name="password" type="password"/>
 
-                <x-form.submit> Register </x-form.submit>
+                <x-form.submit> Log In </x-form.submit>
             </form>
 
             <p class="mt-10 text-center text-sm text-gray-500">
