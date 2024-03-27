@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\OrderController;
 
 Route::middleware('role:admin')->name('admin.')->group(function () {
-    Route::get('/dashboard', DashboardController::class)->name('dashboard');
+    Route::resource('orders', OrderController::class)->only(['index', 'show', 'update']);
 });

@@ -8,7 +8,7 @@
                     <a href="{{ route('home') }}" class="text-sm font-semibold leading-6 text-gray-900">Главная</a>
                     @switch(request()->user()->role->label())
                     @case('Admin')
-                    <a href="{{ route('admin.dashboard') }}" class="text-sm font-semibold leading-6 text-gray-900">Дэшборд</a>
+                    <a href="{{ route('admin.orders.index') }}" class="text-sm font-semibold leading-6 text-gray-900">Заказы</a>
                     @break
 
                     @endswitch

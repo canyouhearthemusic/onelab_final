@@ -18,5 +18,7 @@ class LoginController extends Controller
 
             return redirect('/')->with(['success' => 'You are successfully logged in.']);
         }
+
+        return back()->withErrors(['email', 'The provided credentials do not match our records']);
     }
 }

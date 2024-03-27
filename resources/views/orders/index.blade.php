@@ -59,15 +59,13 @@
                                             class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
                                             Статус
                                         </th>
-                                        <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-6">
-                                            <span class="sr-only">Edit</span>
+                                        <th scope="col"
+                                            class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
                                         </th>
                                     </tr>
                                 </thead>
-                                <tbody class="divide-y divide-gray-200 bg-white">
-                                    <form>
-                                        
-                                    </form>
+                                <tbody id="tableBody" class="divide-y divide-gray-200 bg-white">
+                                    
                                     @foreach ($orders as $order)
                                     <tr>
                                         <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6"">
@@ -92,6 +90,11 @@
                                         <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-900">
                                             {{ $order->status_name }}
                                         </td>
+                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-blue-700 cursor-pointer">
+                                            <a href="{{ route('admin.orders.show', $order->id) }}">
+                                                Править
+                                            </a>
+                                        </td>
                                     </tr>
                                     @endforeach
                                 </tbody>
@@ -101,6 +104,5 @@
                 </div>
             </div>
         </div>
-
     </div>
 </x-auth.layout>
