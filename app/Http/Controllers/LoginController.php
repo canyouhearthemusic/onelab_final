@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\LoginRequest;
+use Illuminate\Validation\ValidationException;
 
 class LoginController extends Controller
 {
@@ -19,6 +20,6 @@ class LoginController extends Controller
             return redirect('/')->with(['success' => 'You are successfully logged in.']);
         }
 
-        return back()->withErrors(['email', 'The provided credentials do not match our records']);
+        throw ValidationException::withMessages(['password' => 'The password could not be verified.']);
     }
 }
